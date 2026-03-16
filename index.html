@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Página de Redirecionamento</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #1a1a1a;
+            font-family: Arial, sans-serif;
+        }
+
+        .btn-surpresa {
+            padding: 20px 40px;
+            font-size: 20px;
+            font-weight: bold;
+            color: white;
+            background-color: #e74c3c;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            box-shadow: 0 4px 15px rgba(231, 76, 60, 0.4);
+            transition: transform 0.2s, background-color 0.2s;
+        }
+
+        .btn-surpresa:hover {
+            background-color: #c0392b;
+            transform: scale(1.05);
+        }
+
+        .btn-surpresa:active {
+            transform: scale(0.95);
+        }
+    </style>
+</head>
+<body>
+
+    <button class="btn-surpresa" onclick="window.location.href='https://www.google.com'">
+        NÃO CLIQUE AQUI!
+    </button>
+
+</body>
+</html>
