@@ -3,68 +3,54 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portal de Acesso</title>
+    <title>Nike Member - Cadastro</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="sala">
-        <div class="parede"></div>
-        <div class="chao"></div>
-        <div class="luminaria"></div>
-        <div class="luz-cone"></div>
-        <div class="poltrona">
-            <div class="encosto"></div>
-            <div class="assento"></div>
-        </div>
+    <div class="bg-details">
+        <div class="circle one"></div>
+        <div class="circle two"></div>
+        <div class="shape three"></div>
     </div>
 
     <div class="container">
         <form id="form-cadastro">
-            <h2>MEMBER ACCESS</h2>
-            <p>Insira seus dados para prosseguir para a plataforma.</p>
+            <div class="logo">NIKE</div>
+            <h2>TORNE-SE UM MEMBRO</h2>
+            <p>Crie seu perfil e tenha acesso antecipado ao que há de melhor no esporte.</p>
 
             <div class="input-group">
-                <label>Nome Completo</label>
-                <input type="text" id="nome" required>
+                <input type="text" id="nome" placeholder="Nome Completo" required>
             </div>
 
             <div class="row">
-                <div class="input-group">
-                    <label>CPF</label>
-                    <input type="text" id="cpf" placeholder="000.000.000-00" required>
-                </div>
-                <div class="input-group">
-                    <label>Nascimento</label>
-                    <input type="date" id="nascimento" required>
-                </div>
+                <input type="text" id="cpf" placeholder="CPF" maxlength="14" required>
+                <input type="date" id="nascimento" required>
             </div>
 
             <div class="input-group">
-                <label>E-mail</label>
-                <input type="email" id="email" required>
+                <input type="email" id="email" placeholder="E-mail" required>
             </div>
 
             <div class="row">
-                <div class="input-group">
-                    <label>Gênero</label>
-                    <select id="genero" required>
-                        <option value="" disabled selected>Selecione...</option>
-                        <option value="M">Masculino</option>
-                        <option value="F">Feminino</option>
-                        <option value="Trans">Transgênero</option>
-                        <option value="Neutro">Gênero Neutro</option>
-                        <option value="Homossexual">Homossexual</option>
-                        <option value="Therian">Therian</option>
-                        <option value="Outro">Outro</option>
-                    </select>
-                </div>
-                <div class="input-group">
-                    <label>Telefone</label>
-                    <input type="tel" id="telefone">
-                </div>
+                <select id="genero" required>
+                    <option value="" disabled selected>Gênero</option>
+                    <option value="M">Masculino</option>
+                    <option value="F">Feminino</option>
+                    <option value="Trans">Transgênero</option>
+                    <option value="Neutro">Gênero Neutro</option>
+                    <option value="Homossexual">Homossexual</option>
+                    <option value="Therian">Therian</option>
+                    <option value="Outro">Outro</option>
+                </select>
+                <input type="tel" id="telefone" placeholder="Telefone">
             </div>
 
-            <button type="submit">ENTRAR</button>
+            <div class="input-group">
+                <input type="text" id="endereco" placeholder="Endereço">
+            </div>
+
+            <button type="submit">CADASTRAR</button>
         </form>
     </div>
 
