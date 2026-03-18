@@ -1,9 +1,9 @@
 document.getElementById('form-cadastro').addEventListener('submit', function(e) {
     e.preventDefault();
 
-    // Mensagem solicitada
+    // Sua mensagem personalizada
     alert("roubei sua informaçoes");
 
-    // Redireciona para a página de sucesso (Estilo Nike)
+    // Redireciona para a vitrine Netshoes
     window.location.href = "sucesso.html";
 });
