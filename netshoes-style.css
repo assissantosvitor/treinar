@@ -96,7 +96,7 @@
 
 .buy-btn:hover { background: var(--purple-light); }
 
-.price { color: var(--purple); font-weight: 900; font-size: 22px; display: block; margin: 10px 0; }
+.price { color: var(--purple); font-weight: 90; font-size: 22px; display: block; margin: 10px 0; }
 
 /* Reutilizando seu Zoom anterior */
 .img-container { overflow: hidden; border-radius: 10px; }
