@@ -1,104 +1,88 @@
-:root {
-    --purple: #5d2d91;
-    --purple-light: #7b40b8;
-    --white: #ffffff;
+/* --- CONFIGURAÇÕES DE IMAGEM E GRID RESPONSIVO --- */
+
+.product-grid {
+    display: grid;
+    /* O auto-fit faz os tênis "pularem" para a linha de baixo sozinhos */
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); 
+    gap: 25px;
+    padding: 20px 0;
 }
 
-* { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Arial', sans-serif; }
-
-/* Barra de Topo Roxa */
-.top-bar {
-    background-color: var(--purple);
-    color: white;
-    text-align: center;
-    padding: 8px;
-    font-size: 11px;
-    font-weight: bold;
-    letter-spacing: 1px;
-}
-
-/* Navbar */
-.navbar {
-    border-bottom: 4px solid var(--purple); /* Linha roxa grossa embaixo da nav */
-    padding: 20px 50px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background: white;
-}
-
-.logo { color: var(--purple); font-size: 28px; font-weight: 900; font-style: italic; }
-
-.membro-btn {
-    background: var(--purple);
-    color: white !important;
-    padding: 8px 15px;
-    border-radius: 20px;
-    font-size: 12px !important;
-}
-
-/* Título com detalhe */
-.section-header h1 { font-size: 28px; color: #111; }
-.header-line {
-    width: 60px;
-    height: 4px;
-    background: var(--purple);
-    margin: 10px 0 20px 0;
-}
-
-/* Cards com Zoom e Bordas */
 .card {
-    position: relative;
-    border: 2px solid transparent; /* Borda invisível para não pular no hover */
-    transition: 0.4s;
-    background: white;
+    background: #fff;
     padding: 20px;
     border-radius: 15px;
     text-align: center;
+    transition: 0.4s;
+    border: 2px solid #f0f0f0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%; /* Garante que todos os cards tenham a mesma altura */
 }
 
-.card:hover {
-    border-color: var(--purple); /* Borda roxa aparece no hover */
-    transform: translateY(-10px);
-}
-
-.tag {
-    position: absolute;
-    top: 15px;
-    left: 15px;
-    background: var(--purple);
-    color: white;
-    padding: 4px 10px;
-    font-size: 10px;
-    font-weight: bold;
-    border-radius: 4px;
-    z-index: 2;
-}
-
-/* Botão de Compra Roxo */
-.buy-btn {
-    margin-top: 15px;
+.img-container {
     width: 100%;
-    padding: 12px;
-    background: var(--purple);
-    color: white;
-    border: none;
-    border-radius: 5px;
-    font-weight: bold;
-    cursor: pointer;
-    transition: 0.3s;
-    opacity: 0; /* Invisível por padrão */
+    height: 200px; /* Altura fixa para manter o alinhamento */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    margin-bottom: 15px;
 }
 
-.card:hover .buy-btn {
-    opacity: 1; /* Aparece no hover */
+.img-container img {
+    /* Isso garante que a imagem nunca estoure o tamanho do card */
+    max-width: 100%;
+    max-height: 100%;
+    width: auto;
+    height: auto;
+    object-fit: contain; /* Mantém a proporção do tênis sem cortar */
+    transition: transform 0.5s ease;
 }
 
-.buy-btn:hover { background: var(--purple-light); }
+/* --- MEDIA QUERIES (AJUSTES PARA CELULAR) --- */
 
-.price { color: var(--purple); font-weight: 900; font-size: 22px; display: block; margin: 10px 0; }
+@media (max-width: 768px) {
+    .navbar {
+        padding: 15px 20px;
+        flex-direction: column; /* Logo em cima, menu embaixo no celular */
+        gap: 10px;
+    }
 
-/* Reutilizando seu Zoom anterior */
-.img-container { overflow: hidden; border-radius: 10px; }
-.img-container img { transition: 0.5s ease; width: 100%; }
-.card:hover .img-container img { transform: scale(1.15); }
+    .menu {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 10px;
+    }
+
+    .menu span {
+        margin-left: 0;
+        font-size: 11px;
+    }
+
+    .content {
+        padding: 20px;
+    }
+
+    .section-header h1 {
+        font-size: 22px;
+        text-align: center;
+    }
+
+    .top-bar {
+        font-size: 9px;
+        padding: 5px;
+    }
+    
+    /* No celular, o grid pode ficar com cards um pouco menores */
+    .product-grid {
+        grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+        gap: 15px;
+    }
+    
+    .img-container {
+        height: 150px; /* Diminui a foto no celular para caber mais itens */
+    }
+}
