@@ -3,57 +3,82 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>VW Netshooes | Lançamentos</title>
+    <title>Netshoes - Tênis, Roupas e Artigos Esportivos</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <div class="toast" id="toast">Item adicionado ao carrinho! 🚀</div>
+    <div class="toast" id="toast">✅ Adicionado ao carrinho!</div>
 
-    <header>
-        <div class="logo">VW NETSHOOES</div>
-        <div class="header-controls">
-            <button class="btn-icon" id="theme-toggle" title="Alternar Tema">🌓</button>
-            <button class="btn-icon" id="cart-toggle" title="Abrir Carrinho">
-                🛒 <span class="cart-badge" id="cart-count">0</span>
-            </button>
+    <header class="header-main">
+        <div class="header-container">
+            <div class="logo">NETSHOES</div>
+            
+            <div class="search-box">
+                <input type="text" placeholder="O que você procura?">
+                <button aria-label="Buscar">🔍</button>
+            </div>
+
+            <div class="header-actions">
+                <div class="user-action">
+                    <span class="icon">👤</span>
+                    <div class="user-text">
+                        <small>Bem-vindo</small>
+                        <strong>Entrar / Cadastrar</strong>
+                    </div>
+                </div>
+                <div class="cart-action" id="cart-toggle">
+                    <span class="icon">🛒</span>
+                    <span class="cart-badge" id="cart-count">0</span>
+                </div>
+            </div>
         </div>
     </header>
 
-    <div class="filters" id="filters">
-        <button class="filter-btn active" data-filter="all">Todos</button>
-        <button class="filter-btn" data-filter="Nike">Nike</button>
-        <button class="filter-btn" data-filter="Adidas">Adidas</button>
-        <button class="filter-btn" data-filter="Puma">Puma</button>
-    </div>
+    <nav class="category-nav">
+        <div class="nav-container">
+            <a href="#">Masculino</a>
+            <a href="#">Feminino</a>
+            <a href="#">Infantil</a>
+            <a href="#">Calçados</a>
+            <a href="#">Roupas</a>
+            <a href="#">Equipamentos</a>
+            <a href="#" class="highlight">Ofertas</a>
+        </div>
+    </nav>
 
-    <section class="hero">
-        <h1>Nova Coleção Esportiva</h1>
-        <p>Acelere seus passos com a melhor performance.</p>
+    <section class="hero-banner">
+        <div class="banner-content">
+            <h2>SEMANA DO CONSUMIDOR</h2>
+            <p>Até 70% OFF em grandes marcas esportivas</p>
+            <button class="btn-banner">Aproveitar</button>
+        </div>
     </section>
 
-    <main class="vitrine" id="vitrine">
-        </main>
-
-    <div class="cart-sidebar" id="cart-sidebar">
-        <div class="cart-header">
-            <h2>Meu Carrinho</h2>
-            <button class="close-cart" id="close-cart">✕</button>
-        </div>
-        <div class="cart-items" id="cart-items">
-            <p>O carrinho está vazio.</p>
-        </div>
-        <div class="cart-footer">
-            <div class="totals">
-                <span>Total:</span>
-                <span id="cart-total">R$ 0,00</span>
+    <main class="main-content">
+        <h2 class="section-title">Recomendados para você</h2>
+        <div class="product-grid" id="product-grid">
             </div>
-            <button class="btn-checkout">Finalizar Compra</button>
-        </div>
-    </div>
+    </main>
 
-    <footer>
-        <p>&copy; 2026 VW Netshooes. Todos os direitos reservados.</p>
+    <footer class="footer-main">
+        <div class="footer-container">
+            <div class="footer-col">
+                <h3>Institucional</h3>
+                <p>Sobre a Netshoes</p>
+                <p>Política de Privacidade</p>
+                <p>Trabalhe Conosco</p>
+            </div>
+            <div class="footer-col">
+                <h3>Atendimento</h3>
+                <p>Central de Relacionamento</p>
+                <p>Meus Pedidos</p>
+                <p>Trocas e Devoluções</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Netshoes. Todos os direitos reservados.</p>
+        </div>
     </footer>
 
     <script src="script.js"></script>

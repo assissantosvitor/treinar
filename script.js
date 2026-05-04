@@ -1,108 +1,100 @@
-// Array de Produtos com imagens de tênis transparentes/fundo branco para dar um efeito 3D legal
+// Base de dados simulada de produtos
 const products = [
-    { id: 1, name: "Air Max Infinity", brand: "Nike", price: 499.90, img: "https://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format&fit=crop&w=400&q=80" },
-    { id: 2, name: "Ultraboost Light", brand: "Adidas", price: 899.90, img: "https://images.unsplash.com/photo-1608231387042-66d1773070a5?auto=format&fit=crop&w=400&q=80" },
-    { id: 3, name: "RS-X 3D", brand: "Puma", price: 449.90, img: "https://images.unsplash.com/photo-1606107557195-0e29a4b5b4aa?auto=format&fit=crop&w=400&q=80" },
-    { id: 4, name: "Dunk Low Retro", brand: "Nike", price: 799.90, img: "https://images.unsplash.com/photo-1515955656352-a1fa3ffcd111?auto=format&fit=crop&w=400&q=80" },
-    { id: 5, name: "Superstar Classic", brand: "Adidas", price: 399.90, img: "https://images.unsplash.com/photo-1518002171953-a080ee817e1f?auto=format&fit=crop&w=400&q=80" },
-    { id: 6, name: "Future Rider", brand: "Puma", price: 349.90, img: "https://images.unsplash.com/photo-1595950653106-6c9ebd614d3a?auto=format&fit=crop&w=400&q=80" }
+    {
+        id: 1,
+        brand: "Nike",
+        name: "Tênis Nike Revolution 6 Next Nature Masculino",
+        oldPrice: "R$ 399,99",
+        newPrice: "R$ 249,99",
+        installments: "ou 4x de R$ 62,50",
+        image: "https://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format&fit=crop&w=400&q=80"
+    },
+    {
+        id: 2,
+        brand: "Adidas",
+        name: "Tênis Adidas Coreracer Masculino",
+        oldPrice: "R$ 299,99",
+        newPrice: "R$ 179,99",
+        installments: "ou 3x de R$ 60,00",
+        image: "https://images.unsplash.com/photo-1608231387042-66d1773070a5?auto=format&fit=crop&w=400&q=80"
+    },
+    {
+        id: 3,
+        brand: "Puma",
+        name: "Tênis Puma Smash V2 BDP",
+        oldPrice: "R$ 249,90",
+        newPrice: "R$ 189,90",
+        installments: "ou 3x de R$ 63,30",
+        image: "https://images.unsplash.com/photo-1606107557195-0e29a4b5b4aa?auto=format&fit=crop&w=400&q=80"
+    },
+    {
+        id: 4,
+        brand: "Olympikus",
+        name: "Tênis Olympikus Corre 3 Unissex",
+        oldPrice: "R$ 499,99",
+        newPrice: "R$ 399,90",
+        installments: "ou 7x de R$ 57,12",
+        image: "https://images.unsplash.com/photo-1595950653106-6c9ebd614d3a?auto=format&fit=crop&w=400&q=80"
+    },
+    {
+        id: 5,
+        brand: "Mizuno",
+        name: "Tênis Mizuno Wave Titan 2 Masculino",
+        oldPrice: "R$ 349,99",
+        newPrice: "R$ 219,90",
+        installments: "ou 4x de R$ 54,97",
+        image: "https://images.unsplash.com/photo-1515955656352-a1fa3ffcd111?auto=format&fit=crop&w=400&q=80"
+    },
+    {
+        id: 6,
+        brand: "Asics",
+        name: "Tênis Asics Gel-Kihai 2 Masculino",
+        oldPrice: "R$ 399,99",
+        newPrice: "R$ 259,99",
+        installments: "ou 4x de R$ 65,00",
+        image: "https://images.unsplash.com/photo-1518002171953-a080ee817e1f?auto=format&fit=crop&w=400&q=80"
+    }
 ];
 
-let cart = [];
+let cartCount = 0;
+const cartBadge = document.getElementById('cart-count');
+const grid = document.getElementById('product-grid');
 
-// Elementos da DOM
-const vitrine = document.getElementById('vitrine');
-const filterBtns = document.querySelectorAll('.filter-btn');
-const cartSidebar = document.getElementById('cart-sidebar');
-const cartItems = document.getElementById('cart-items');
-const cartCount = document.getElementById('cart-count');
-const cartTotal = document.getElementById('cart-total');
-
-// Renderiza produtos na vitrine
-function renderProducts(filter = 'all') {
-    vitrine.innerHTML = '';
-    const filtered = filter === 'all' ? products : products.filter(p => p.brand === filter);
-    
-    filtered.forEach(p => {
+// Função para renderizar os produtos no formato Netshoes
+function renderProducts() {
+    products.forEach(product => {
         const card = document.createElement('div');
         card.className = 'card';
         card.innerHTML = `
-            <div class="img-container">
-                <img src="${p.img}" alt="${p.name}">
+            <img src="${product.image}" alt="${product.name}" class="card-img">
+            <p class="card-brand">${product.brand}</p>
+            <h3 class="card-title">${product.name}</h3>
+            <div>
+                <p class="price-old">${product.oldPrice}</p>
+                <p class="price-new">${product.newPrice}</p>
+                <p class="installments">${product.installments}</p>
             </div>
-            <div class="card-info">
-                <p class="card-brand">${p.brand}</p>
-                <h3 class="card-title">${p.name}</h3>
-                <p class="card-price">R$ ${p.price.toFixed(2).replace('.', ',')}</p>
-                <button class="btn-add" onclick="addToCart(${p.id})">Adicionar ao Carrinho</button>
-            </div>
+            <button class="btn-buy" onclick="addToCart()">Comprar</button>
         `;
-        vitrine.appendChild(card);
+        grid.appendChild(card);
     });
 }
 
-// Filtros
-filterBtns.forEach(btn => {
-    btn.addEventListener('click', (e) => {
-        filterBtns.forEach(b => b.classList.remove('active'));
-        e.target.classList.add('active');
-        renderProducts(e.target.dataset.filter);
-    });
-});
-
-// Funções do Carrinho
-function addToCart(id) {
-    const product = products.find(p => p.id === id);
-    cart.push(product);
-    updateCart();
+// Função para adicionar ao carrinho
+function addToCart() {
+    cartCount++;
+    cartBadge.innerText = cartCount;
     showToast();
 }
 
-function removeFromCart(index) {
-    cart.splice(index, 1);
-    updateCart();
-}
-
-function updateCart() {
-    cartCount.innerText = cart.length;
-    
-    if (cart.length === 0) {
-        cartItems.innerHTML = '<p>O carrinho está vazio.</p>';
-        cartTotal.innerText = 'R$ 0,00';
-        return;
-    }
-
-    cartItems.innerHTML = '';
-    let total = 0;
-    cart.forEach((item, index) => {
-        total += item.price;
-        cartItems.innerHTML += `
-            <div class="cart-item">
-                <div>
-                    <strong>${item.name}</strong><br>
-                    <small>R$ ${item.price.toFixed(2).replace('.', ',')}</small>
-                </div>
-                <button class="btn-remove" onclick="removeFromCart(${index})">X</button>
-            </div>
-        `;
-    });
-    cartTotal.innerText = `R$ ${total.toFixed(2).replace('.', ',')}`;
-}
-
-// Toast (Notificação de adição)
+// Função para mostrar notificação
 function showToast() {
     const toast = document.getElementById('toast');
     toast.classList.add('show');
-    setTimeout(() => toast.classList.remove('show'), 2500);
+    setTimeout(() => {
+        toast.classList.remove('show');
+    }, 2500);
 }
 
-// Interações de Menu Lateral e Tema Escuro
-document.getElementById('cart-toggle').addEventListener('click', () => cartSidebar.classList.add('open'));
-document.getElementById('close-cart').addEventListener('click', () => cartSidebar.classList.remove('open'));
-
-document.getElementById('theme-toggle').addEventListener('click', () => {
-    document.body.classList.toggle('dark-mode');
-});
-
-// Inicialização
+// Inicializar a loja
 renderProducts();
