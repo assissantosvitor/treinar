@@ -1,70 +1,11 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="pt-br">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Netshoes - Lançamentos</title>
-
-  <!-- Estilos principais -->
-  <style>
-    :root{
-      --bg:#f6f7fb;
-      --card:#ffffff;
-      --muted:#6b7280;
-      --accent:#0b5fff;
-      --shadow: 0 8px 24px rgba(15,23,42,0.08);
-      --brand:#6b21a8;
-    }
-    *{box-sizing:border-box}
-    body{margin:0;font-family:Inter,system-ui,Arial,sans-serif;background:var(--bg);color:#111827}
-    .navbar{display:flex;justify-content:space-between;align-items:center;padding:18px 28px;background:#fff;border-bottom:1px solid #eee;position:sticky;top:0;z-index:40}
-    .logo{font-weight:900;letter-spacing:2px}
-    .menu{display:flex;gap:18px;color:var(--muted);font-size:14px}
-    .content{max-width:1200px;margin:28px auto;padding:0 20px}
-    .section-header{text-align:center;margin-bottom:18px}
-    .section-header h1{margin:0;font-size:28px}
-    .section-header p{margin:6px 0 0;color:var(--muted)}
-
-    /* Grid de produtos */
-    .product-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:22px;margin:18px 0;padding-bottom:8px}
-    .card{background:var(--card);border-radius:12px;padding:14px;box-shadow:var(--shadow);display:flex;flex-direction:column;align-items:center;text-align:center;transition:transform .22s ease,box-shadow .22s ease;border:1px solid rgba(15,23,42,0.04)}
-    .card:hover{transform:translateY(-6px);box-shadow:0 18px 40px rgba(15,23,42,0.12)}
-    .img-container{width:100%;height:220px;display:flex;align-items:center;justify-content:center;overflow:hidden;border-radius:10px;background:linear-gradient(180deg,#fff,#fafafa);margin-bottom:12px}
-    .img-container img{max-width:92%;max-height:92%;object-fit:contain;transition:transform .45s cubic-bezier(.2,.8,.2,1)}
-    .card:hover .img-container img{transform:scale(1.08) rotate(-3deg)}
-    .card h3{margin:8px 0 6px;font-size:16px}
-    .card p{margin:0;color:var(--muted);font-size:13px}
-    .price{margin-top:10px;font-weight:700;color:#111827}
-    .actions{display:flex;gap:10px;margin-top:12px}
-    .btn{background:var(--accent);color:#fff;border:0;padding:9px 12px;border-radius:8px;cursor:pointer;font-weight:700}
-    .btn.secondary{background:#fff;color:var(--accent);border:1px solid rgba(11,91,255,0.12)}
-    .brand-title{color:var(--brand);font-weight:800;letter-spacing:1px;margin:18px 0 8px;text-transform:uppercase;border-bottom:2px solid #f0f0f0;padding-bottom:10px}
-
-    /* Modal */
-    .modal-backdrop{position:fixed;inset:0;background:rgba(2,6,23,0.5);display:none;align-items:center;justify-content:center;padding:20px;z-index:80}
-    .modal{background:#fff;border-radius:12px;max-width:920px;width:100%;display:grid;grid-template-columns:1fr 1fr;gap:18px;padding:18px;box-shadow:0 30px 80px rgba(2,6,23,0.4)}
-    .modal .modal-img{display:flex;align-items:center;justify-content:center;background:#fafafa;border-radius:8px;padding:12px}
-    .modal .modal-img img{max-width:100%;max-height:420px;object-fit:contain}
-    .modal .modal-info{padding:6px 4px;display:flex;flex-direction:column;justify-content:space-between}
-    .modal .modal-info h2{margin:0 0 8px}
-    .modal .modal-info p{color:var(--muted);margin:0 0 12px}
-    .modal .modal-info .price{font-size:20px;color:#111827}
-    .modal .modal-info .modal-actions{display:flex;gap:12px;margin-top:18px}
-    .close-btn{background:#fff;border:1px solid #eee;padding:8px 10px;border-radius:8px;cursor:pointer}
-    .inspect-btn{background:#111827;color:#fff;padding:8px 10px;border-radius:8px;border:0;cursor:pointer}
-
-    /* Responsividade */
-    @media (max-width:900px){
-      .modal{grid-template-columns:1fr;max-height:90vh;overflow:auto}
-      .img-container{height:180px}
-      .product-grid{grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:14px}
-    }
-    @media (max-width:520px){
-      .img-container{height:150px}
-      .section-header h1{font-size:20px}
-      .menu{display:none}
-    }
-  </style>
+  <title>Netshoes - Vitrine</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="fashion-style.css">
 </head>
 <body>
   <nav class="navbar">
@@ -83,15 +24,14 @@
       <p>Explore as melhores coleções selecionadas para você.</p>
     </header>
 
-    <!-- Exemplo de seção com produtos -->
+    <!-- NIKE -->
     <section class="brand-section">
       <h2 class="brand-title">NIKE</h2>
       <div class="product-grid" id="productGrid">
-        <!-- Card 1 -->
         <div class="card" data-name="Air Max DN" data-desc="Tecnologia Air Máxima" data-price="1299.90" data-img="https://imgnike-a.akamaihd.net/768x768/02898351A1.jpg" data-link="https://www.nike.com.br/air-max-dn">
           <div class="img-container"><img src="https://imgnike-a.akamaihd.net/768x768/02898351A1.jpg" alt="Air Max DN"></div>
           <h3>Air Max DN</h3>
-          <p>Tecnologia Air Máxima</p>
+          <p class="muted">Tecnologia Air Máxima</p>
           <div class="price">R$ 1.299,90</div>
           <div class="actions">
             <button class="btn inspect">INSPECIONAR</button>
@@ -99,88 +39,121 @@
           </div>
         </div>
 
-        <!-- Card 2 -->
-        <div class="card" data-name="Air Max 97" data-desc="Prata Metálico" data-price="1099.90" data-img="https://imgnike-a.akamaihd.net/768x768/01113751A2.jpg" data-link="https://www.nike.com.br/air-max-97">
-          <div class="img-container"><img src="https://imgnike-a.akamaihd.net/768x768/01113751A2.jpg" alt="Air Max 97"></div>
-          <h3>Air Max 97</h3>
-          <p>Prata Metálico</p>
+        <div class="card" data-name="Air Jordan 1" data-desc="Edição Limitada Retro" data-price="1799.90" data-img="https://static.nike.com/a/images/t_default/air-jordan-1.jpg" data-link="https://www.nike.com.br/air-jordan-1">
+          <div class="img-container"><img src="https://static.nike.com/a/images/t_default/air-jordan-1.jpg" alt="Air Jordan 1"></div>
+          <h3>Air Jordan 1</h3>
+          <p class="muted">Edição Limitada Retro</p>
+          <div class="price">R$ 1.799,90</div>
+          <div class="actions">
+            <button class="btn inspect">INSPECIONAR</button>
+            <button class="btn secondary" onclick="window.open('https://www.nike.com.br/air-jordan-1','_blank')">IR PARA O SITE</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ADIDAS -->
+    <section class="brand-section">
+      <h2 class="brand-title">ADIDAS</h2>
+      <div class="product-grid">
+        <div class="card" data-name="Ultraboost 22" data-desc="Performance e Conforto" data-price="1099.90" data-img="https://assets.adidas.com/images/h_2000,f_auto,q_auto,fl_lossy,c_fill,g_auto/ultraboost.jpg" data-link="https://www.adidas.com.br/ultraboost-22">
+          <div class="img-container"><img src="https://assets.adidas.com/images/h_2000,f_auto,q_auto,fl_lossy,c_fill,g_auto/ultraboost.jpg" alt="Ultraboost 22"></div>
+          <h3>Ultraboost 22</h3>
+          <p class="muted">Performance e Conforto</p>
           <div class="price">R$ 1.099,90</div>
           <div class="actions">
             <button class="btn inspect">INSPECIONAR</button>
-            <button class="btn secondary" onclick="window.open('https://www.nike.com.br/air-max-97','_blank')">IR PARA O SITE</button>
+            <button class="btn secondary" onclick="window.open('https://www.adidas.com.br/ultraboost-22','_blank')">IR PARA O SITE</button>
           </div>
         </div>
 
-        <!-- Card 3 (Adidas example) -->
-        <div class="card" data-name="Superstar II" data-desc="Clássico Originals" data-price="549.90" data-img="https://assets.adidas.com/images/h_2000,f_auto,q_auto,fl_lossy,c_fill,g_auto/3b8078fba9ab48f7a46e50ed4f222f98_9366/Tenis_Superstar_II_Preto_JK4970_01_00_standard.jpg" data-link="https://www.adidas.com.br/superstar">
-          <div class="img-container"><img src="https://assets.adidas.com/images/h_2000,f_auto,q_auto,fl_lossy,c_fill,g_auto/3b8078fba9ab48f7a46e50ed4f222f98_9366/Tenis_Superstar_II_Preto_JK4970_01_00_standard.jpg" alt="Superstar II"></div>
+        <div class="card" data-name="Superstar II" data-desc="Clássico Originals" data-price="549.90" data-img="https://assets.adidas.com/images/h_2000,f_auto,q_auto,fl_lossy,c_fill,g_auto/superstar.jpg" data-link="https://www.adidas.com.br/superstar">
+          <div class="img-container"><img src="https://assets.adidas.com/images/h_2000,f_auto,q_auto,fl_lossy,c_fill,g_auto/superstar.jpg" alt="Superstar II"></div>
           <h3>Superstar II</h3>
-          <p>Clássico Originals</p>
+          <p class="muted">Clássico Originals</p>
           <div class="price">R$ 549,90</div>
           <div class="actions">
             <button class="btn inspect">INSPECIONAR</button>
             <button class="btn secondary" onclick="window.open('https://www.adidas.com.br/superstar','_blank')">IR PARA O SITE</button>
           </div>
         </div>
+      </div>
+    </section>
 
-        <!-- Card 4 (Puma example) -->
+    <!-- PUMA -->
+    <section class="brand-section">
+      <h2 class="brand-title">PUMA</h2>
+      <div class="product-grid">
         <div class="card" data-name="Puma RS-X" data-desc="Design Futurista" data-price="799.90" data-img="https://images.puma.com/image/upload/f_auto,q_auto,b_rgb:fafafa/global/rs-x.jpg" data-link="https://br.puma.com/rs-x">
           <div class="img-container"><img src="https://images.puma.com/image/upload/f_auto,q_auto,b_rgb:fafafa/global/rs-x.jpg" alt="Puma RS-X"></div>
           <h3>Puma RS-X</h3>
-          <p>Design Futurista</p>
+          <p class="muted">Design Futurista</p>
           <div class="price">R$ 799,90</div>
           <div class="actions">
             <button class="btn inspect">INSPECIONAR</button>
             <button class="btn secondary" onclick="window.open('https://br.puma.com/rs-x','_blank')">IR PARA O SITE</button>
           </div>
         </div>
+      </div>
+    </section>
 
-        <!-- Card 5 (Crocs example) -->
-        <div class="card" data-name="Crocs Classic" data-desc="Conforto icônico" data-price="299.90" data-img="https://images.crocs.com/classic-clog.jpg" data-link="https://www.crocs.com.br/classic-clog">
-          <div class="img-container"><img src="https://images.crocs.com/classic-clog.jpg" alt="Crocs Classic"></div>
+    <!-- CROCS -->
+    <section class="brand-section">
+      <h2 class="brand-title">CROCS</h2>
+      <div class="product-grid">
+        <div class="card" data-name="Crocs Classic Clog" data-desc="Conforto icônico" data-price="299.90" data-img="https://www.crocs.com/on/demandware.static/-/Sites-crocs-master-catalog/default/dw0c3f3f2b/images/large/10001-001.jpg" data-link="https://www.crocs.com.br/classic-clog">
+          <div class="img-container"><img src="https://www.crocs.com/on/demandware.static/-/Sites-crocs-master-catalog/default/dw0c3f3f2b/images/large/10001-001.jpg" alt="Crocs Classic"></div>
           <h3>Crocs Classic Clog</h3>
-          <p>Conforto icônico</p>
+          <p class="muted">Conforto icônico</p>
           <div class="price">R$ 299,90</div>
           <div class="actions">
             <button class="btn inspect">INSPECIONAR</button>
             <button class="btn secondary" onclick="window.open('https://www.crocs.com.br/classic-clog','_blank')">IR PARA O SITE</button>
           </div>
         </div>
+      </div>
+    </section>
 
-        <!-- Card 6 (OUS example) -->
-        <div class="card" data-name="OUS Imigrante" data-desc="Skate Lifestyle" data-price="499.90" data-img="https://ous.com.br/images/imigrante.jpg" data-link="https://ous.com.br/imigrante">
-          <div class="img-container"><img src="https://ous.com.br/images/imigrante.jpg" alt="OUS Imigrante"></div>
+    <!-- OUS -->
+    <section class="brand-section">
+      <h2 class="brand-title">OUS</h2>
+      <div class="product-grid">
+        <div class="card" data-name="OUS Imigrante" data-desc="Skate Lifestyle" data-price="499.90" data-img="https://ous.com.br/wp-content/uploads/2021/08/imigrante.jpg" data-link="https://ous.com.br/imigrante">
+          <div class="img-container"><img src="https://ous.com.br/wp-content/uploads/2021/08/imigrante.jpg" alt="OUS Imigrante"></div>
           <h3>OUS Imigrante</h3>
-          <p>Skate Lifestyle</p>
+          <p class="muted">Skate Lifestyle</p>
           <div class="price">R$ 499,90</div>
           <div class="actions">
             <button class="btn inspect">INSPECIONAR</button>
             <button class="btn secondary" onclick="window.open('https://ous.com.br/imigrante','_blank')">IR PARA O SITE</button>
           </div>
         </div>
+      </div>
+    </section>
 
-        <!-- Card 7 (Hocks example) -->
-        <div class="card" data-name="Hocks Sonora" data-desc="Estilo Urbano" data-price="459.90" data-img="https://hocks.com.br/images/sonora.jpg" data-link="https://hocks.com.br/sonora">
-          <div class="img-container"><img src="https://hocks.com.br/images/sonora.jpg" alt="Hocks Sonora"></div>
+    <!-- HOCKS -->
+    <section class="brand-section">
+      <h2 class="brand-title">HOCKS</h2>
+      <div class="product-grid">
+        <div class="card" data-name="Hocks Sonora" data-desc="Estilo Urbano" data-price="459.90" data-img="https://hocks.com.br/wp-content/uploads/2020/10/sonora.jpg" data-link="https://hocks.com.br/sonora">
+          <div class="img-container"><img src="https://hocks.com.br/wp-content/uploads/2020/10/sonora.jpg" alt="Hocks Sonora"></div>
           <h3>Hocks Sonora</h3>
-          <p>Estilo Urbano</p>
+          <p class="muted">Estilo Urbano</p>
           <div class="price">R$ 459,90</div>
           <div class="actions">
             <button class="btn inspect">INSPECIONAR</button>
             <button class="btn secondary" onclick="window.open('https://hocks.com.br/sonora','_blank')">IR PARA O SITE</button>
           </div>
         </div>
-
-        <!-- Você pode duplicar/editar os cards acima para adicionar mais produtos -->
       </div>
     </section>
   </main>
 
-  <footer style="text-align:center;padding:18px 0;color:#6b7280">
+  <footer class="footer">
     <p>&copy; 2026 NETSHOES - Desenvolvido para Washington GitHub</p>
   </footer>
 
-  <!-- Modal markup -->
+  <!-- Modal -->
   <div id="modalBackdrop" class="modal-backdrop" aria-hidden="true">
     <div class="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
       <div class="modal-img">
@@ -194,91 +167,13 @@
         </div>
         <div class="modal-actions">
           <button class="close-btn" id="closeModal">Fechar</button>
-          <button class="inspect-btn" id="openInspect">INSPECIONAR</button>
+          <button class="inspect-btn" id="openInspect">ABRIR NO SITE (INSPECIONAR)</button>
           <button class="btn" id="goToSite">IR PARA O SITE</button>
         </div>
       </div>
     </div>
   </div>
 
-  <!-- Script: abre modal com dados do card e controla botões -->
-  <script>
-    (function(){
-      const modalBackdrop = document.getElementById('modalBackdrop');
-      const modalImage = document.getElementById('modalImage');
-      const modalTitle = document.getElementById('modalTitle');
-      const modalDesc = document.getElementById('modalDesc');
-      const modalPrice = document.getElementById('modalPrice');
-      const closeModal = document.getElementById('closeModal');
-      const goToSite = document.getElementById('goToSite');
-      const openInspect = document.getElementById('openInspect');
-
-      // Delegation: abre modal quando clicar em botão INSPECIONAR
-      document.addEventListener('click', function(e){
-        const btn = e.target.closest('.inspect');
-        if(!btn) return;
-        const card = btn.closest('.card');
-        if(!card) return;
-
-        const name = card.dataset.name || card.querySelector('h3')?.innerText || 'Produto';
-        const desc = card.dataset.desc || card.querySelector('p')?.innerText || '';
-        const price = card.dataset.price ? Number(card.dataset.price).toFixed(2) : null;
-        const img = card.dataset.img || card.querySelector('img')?.src || '';
-        const link = card.dataset.link || null;
-
-        modalImage.src = img;
-        modalImage.alt = name;
-        modalTitle.textContent = name;
-        modalDesc.textContent = desc;
-        modalPrice.textContent = price ? ('R$ ' + price.replace('.',',')) : '';
-        goToSite.dataset.link = link;
-        openInspect.dataset.link = link;
-
-        // mostrar modal
-        modalBackdrop.style.display = 'flex';
-        modalBackdrop.setAttribute('aria-hidden','false');
-        document.body.style.overflow = 'hidden';
-      });
-
-      // fechar modal
-      closeModal.addEventListener('click', close);
-      modalBackdrop.addEventListener('click', function(e){
-        if(e.target === modalBackdrop) close();
-      });
-      document.addEventListener('keydown', function(e){
-        if(e.key === 'Escape') close();
-      });
-
-      function close(){
-        modalBackdrop.style.display = 'none';
-        modalBackdrop.setAttribute('aria-hidden','true');
-        document.body.style.overflow = '';
-      }
-
-      // botão IR PARA O SITE
-      goToSite.addEventListener('click', function(){
-        const link = this.dataset.link;
-        if(link) window.open(link,'_blank');
-      });
-
-      // botão INSPECIONAR: abre a ferramenta de inspeção do navegador não é possível via JS por segurança,
-      // então aqui abrimos a página do produto em nova aba e destacamos que o usuário pode inspecionar lá.
-      openInspect.addEventListener('click', function(){
-        const link = this.dataset.link;
-        if(link){
-          // abre a página do produto em nova aba para o usuário inspecionar manualmente
-          window.open(link,'_blank');
-        } else {
-          alert('Link do produto não disponível para inspeção.');
-        }
-      });
-
-      // Acessibilidade: foco no primeiro botão ao abrir modal
-      modalBackdrop.addEventListener('transitionend', function(){
-        const firstBtn = modalBackdrop.querySelector('button');
-        if(firstBtn) firstBtn.focus();
-      });
-    })();
-  </script>
+  <script src="script.js"></script>
 </body>
 </html>
