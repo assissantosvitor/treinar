@@ -1,106 +1,11 @@
-/* --- CONFIGURAÇÕES DE IMAGEM E GRID RESPONSIVO --- */
-
-.product-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); 
-    gap: 25px;
-    padding: 20px 0;
+/* Estilos opcionais de "fashion" para destacar a seção premium */
+:root{
+  --premium-bg: linear-gradient(180deg,#fff,#f8f6ff);
+  --premium-accent: #8b5cf6;
 }
 
-.card {
-    background: #fff;
-    padding: 20px;
-    border-radius: 15px;
-    text-align: center;
-    transition: 0.4s;
-    border: 2px solid #f0f0f0;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    height: 100%; /* Garante altura uniforme */
-}
-
-/* Padronização das Imagens */
-.img-container {
-    width: 100%;
-    height: 250px; /* Altura fixa para alinhar tudo */
-    background-color: #ffffff;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    overflow: hidden;
-    border-radius: 8px;
-    margin-bottom: 15px;
-}
-
-.img-container img {
-    max-width: 90%; 
-    max-height: 90%;
-    object-fit: contain; 
-    transition: transform 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-}
-
-/* Zoom no Hover */
-.card:hover .img-container img {
-    transform: scale(1.15) rotate(-5deg);
-}
-
-/* Estilo para as Seções de Marcas */
-.brand-section {
-    margin-bottom: 60px;
-}
-
-.brand-title {
-    color: var(--purple);
-    font-size: 24px;
-    font-weight: 900;
-    letter-spacing: 2px;
-    border-bottom: 2px solid #eee;
-    padding-bottom: 10px;
-    margin-bottom: 25px;
-    text-transform: uppercase;
-}
-
-/* --- MEDIA QUERIES (AJUSTES PARA CELULAR) --- */
-@media (max-width: 768px) {
-    .navbar {
-        padding: 15px 20px;
-        flex-direction: column;
-        gap: 10px;
-    }
-
-    .menu {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
-        gap: 10px;
-    }
-
-    .menu span {
-        margin-left: 0;
-        font-size: 11px;
-    }
-
-    .content {
-        padding: 20px;
-    }
-
-    .section-header h1 {
-        font-size: 22px;
-        text-align: center;
-    }
-
-    .brand-title {
-        font-size: 20px;
-        text-align: center;
-    }
-
-    .product-grid {
-        grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
-        gap: 15px;
-    }
-
-    .img-container {
-        height: 180px; /* Menor no celular */
-    }
-}
+.brand-section.premium { background: var(--premium-bg); padding: 18px; border-radius: 12px; margin-bottom: 28px; }
+.brand-section.premium .brand-title { color: var(--premium-accent); border-bottom-color: rgba(139,92,246,0.12); }
+.card.premium { border: 1px solid rgba(139,92,246,0.08); box-shadow: 0 12px 36px rgba(139,92,246,0.06); }
+.card.premium .price { color: var(--premium-accent); font-size: 18px; }
+.cta { display:inline-block;background:var(--accent);color:#fff;padding:10px 14px;border-radius:10px;text-decoration:none;font-weight:700;margin-top:12px }
