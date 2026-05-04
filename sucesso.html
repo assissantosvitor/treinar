@@ -3,172 +3,120 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Netshoes - Vitrine</title>
+  <title>Samuel Fashion · Vitrine</title>
   <link rel="stylesheet" href="style.css">
-  <link rel="stylesheet" href="fashion-style.css">
 </head>
 <body>
-  <nav class="navbar">
-    <div class="logo">NETSHOES</div>
-    <div class="menu">
-      <span>Calçados</span>
-      <span>Roupas</span>
-      <span>Acessórios</span>
-      <span>Membros</span>
+  <header class="topbar">
+    <div class="topbar-inner">
+      <div class="brand">SAMUEL FASHION</div>
+      <nav class="topnav">
+        <a href="index.html">Home</a>
+        <a href="sucesso.html" class="active">Vitrine</a>
+        <a href="#">Contato</a>
+      </nav>
     </div>
-  </nav>
+  </header>
 
-  <main class="content">
-    <header class="section-header">
-      <h1>VITRINE POR MARCAS</h1>
-      <p>Explore as melhores coleções selecionadas para você.</p>
-    </header>
+  <main class="container">
+    <section class="hero">
+      <div class="hero-left">
+        <h1>Coleções Premium</h1>
+        <p>Seleção curada de tênis e lançamentos — clique para ver detalhes ou ir direto à loja oficial.</p>
+      </div>
+      <div class="hero-right">
+        <img src="https://images.unsplash.com/photo-1528701800489-476f6f0b8b2a?q=80&w=1200&auto=format&fit=crop&ixlib=rb-4.0.3&s=000000" alt="vitrine">
+      </div>
+    </section>
 
-    <!-- NIKE -->
+    <!-- Seção NIKE -->
     <section class="brand-section">
       <h2 class="brand-title">NIKE</h2>
-      <div class="product-grid" id="productGrid">
-        <div class="card" data-name="Air Max DN" data-desc="Tecnologia Air Máxima" data-price="1299.90" data-img="https://imgnike-a.akamaihd.net/768x768/02898351A1.jpg" data-link="https://www.nike.com.br/air-max-dn">
-          <div class="img-container"><img src="https://imgnike-a.akamaihd.net/768x768/02898351A1.jpg" alt="Air Max DN"></div>
+      <div class="grid">
+        <article class="product" data-name="Air Max DN" data-price="1299.90" data-desc="Tecnologia Air Máxima" data-img="https://imgnike-a.akamaihd.net/768x768/02898351A1.jpg" data-link="https://www.nike.com.br/air-max-dn">
+          <figure class="thumb"><img src="https://imgnike-a.akamaihd.net/768x768/02898351A1.jpg" alt="Air Max DN"></figure>
           <h3>Air Max DN</h3>
-          <p class="muted">Tecnologia Air Máxima</p>
           <div class="price">R$ 1.299,90</div>
-          <div class="actions">
-            <button class="btn inspect">INSPECIONAR</button>
-            <button class="btn secondary" onclick="window.open('https://www.nike.com.br/air-max-dn','_blank')">IR PARA O SITE</button>
+          <div class="product-actions">
+            <button class="btn inspect">Ver / Inspecionar</button>
+            <a class="btn outline" href="https://www.nike.com.br/air-max-dn" target="_blank" rel="noopener">Ver na Loja</a>
           </div>
-        </div>
+        </article>
 
-        <div class="card" data-name="Air Jordan 1" data-desc="Edição Limitada Retro" data-price="1799.90" data-img="https://static.nike.com/a/images/t_default/air-jordan-1.jpg" data-link="https://www.nike.com.br/air-jordan-1">
-          <div class="img-container"><img src="https://static.nike.com/a/images/t_default/air-jordan-1.jpg" alt="Air Jordan 1"></div>
+        <article class="product" data-name="Air Jordan 1" data-price="1799.90" data-desc="Edição Limitada Retro" data-img="https://static.nike.com/a/images/t_default/air-jordan-1.jpg" data-link="https://www.nike.com.br/air-jordan-1">
+          <figure class="thumb"><img src="https://static.nike.com/a/images/t_default/air-jordan-1.jpg" alt="Air Jordan 1"></figure>
           <h3>Air Jordan 1</h3>
-          <p class="muted">Edição Limitada Retro</p>
           <div class="price">R$ 1.799,90</div>
-          <div class="actions">
-            <button class="btn inspect">INSPECIONAR</button>
-            <button class="btn secondary" onclick="window.open('https://www.nike.com.br/air-jordan-1','_blank')">IR PARA O SITE</button>
+          <div class="product-actions">
+            <button class="btn inspect">Ver / Inspecionar</button>
+            <a class="btn outline" href="https://www.nike.com.br/air-jordan-1" target="_blank" rel="noopener">Ver na Loja</a>
           </div>
-        </div>
+        </article>
       </div>
     </section>
 
-    <!-- ADIDAS -->
+    <!-- Seção ADIDAS -->
     <section class="brand-section">
       <h2 class="brand-title">ADIDAS</h2>
-      <div class="product-grid">
-        <div class="card" data-name="Ultraboost 22" data-desc="Performance e Conforto" data-price="1099.90" data-img="https://assets.adidas.com/images/h_2000,f_auto,q_auto,fl_lossy,c_fill,g_auto/ultraboost.jpg" data-link="https://www.adidas.com.br/ultraboost-22">
-          <div class="img-container"><img src="https://assets.adidas.com/images/h_2000,f_auto,q_auto,fl_lossy,c_fill,g_auto/ultraboost.jpg" alt="Ultraboost 22"></div>
+      <div class="grid">
+        <article class="product" data-name="Ultraboost 22" data-price="1099.90" data-desc="Performance e Conforto" data-img="https://assets.adidas.com/images/h_2000,f_auto,q_auto,fl_lossy,c_fill,g_auto/ultraboost.jpg" data-link="https://www.adidas.com.br/ultraboost-22">
+          <figure class="thumb"><img src="https://assets.adidas.com/images/h_2000,f_auto,q_auto,fl_lossy,c_fill,g_auto/ultraboost.jpg" alt="Ultraboost 22"></figure>
           <h3>Ultraboost 22</h3>
-          <p class="muted">Performance e Conforto</p>
           <div class="price">R$ 1.099,90</div>
-          <div class="actions">
-            <button class="btn inspect">INSPECIONAR</button>
-            <button class="btn secondary" onclick="window.open('https://www.adidas.com.br/ultraboost-22','_blank')">IR PARA O SITE</button>
+          <div class="product-actions">
+            <button class="btn inspect">Ver / Inspecionar</button>
+            <a class="btn outline" href="https://www.adidas.com.br/ultraboost-22" target="_blank" rel="noopener">Ver na Loja</a>
           </div>
-        </div>
+        </article>
 
-        <div class="card" data-name="Superstar II" data-desc="Clássico Originals" data-price="549.90" data-img="https://assets.adidas.com/images/h_2000,f_auto,q_auto,fl_lossy,c_fill,g_auto/superstar.jpg" data-link="https://www.adidas.com.br/superstar">
-          <div class="img-container"><img src="https://assets.adidas.com/images/h_2000,f_auto,q_auto,fl_lossy,c_fill,g_auto/superstar.jpg" alt="Superstar II"></div>
+        <article class="product" data-name="Superstar II" data-price="549.90" data-desc="Clássico Originals" data-img="https://assets.adidas.com/images/h_2000,f_auto,q_auto,fl_lossy,c_fill,g_auto/superstar.jpg" data-link="https://www.adidas.com.br/superstar">
+          <figure class="thumb"><img src="https://assets.adidas.com/images/h_2000,f_auto,q_auto,fl_lossy,c_fill,g_auto/superstar.jpg" alt="Superstar II"></figure>
           <h3>Superstar II</h3>
-          <p class="muted">Clássico Originals</p>
           <div class="price">R$ 549,90</div>
-          <div class="actions">
-            <button class="btn inspect">INSPECIONAR</button>
-            <button class="btn secondary" onclick="window.open('https://www.adidas.com.br/superstar','_blank')">IR PARA O SITE</button>
+          <div class="product-actions">
+            <button class="btn inspect">Ver / Inspecionar</button>
+            <a class="btn outline" href="https://www.adidas.com.br/superstar" target="_blank" rel="noopener">Ver na Loja</a>
           </div>
-        </div>
+        </article>
       </div>
     </section>
 
-    <!-- PUMA -->
+    <!-- Seção PUMA -->
     <section class="brand-section">
       <h2 class="brand-title">PUMA</h2>
-      <div class="product-grid">
-        <div class="card" data-name="Puma RS-X" data-desc="Design Futurista" data-price="799.90" data-img="https://images.puma.com/image/upload/f_auto,q_auto,b_rgb:fafafa/global/rs-x.jpg" data-link="https://br.puma.com/rs-x">
-          <div class="img-container"><img src="https://images.puma.com/image/upload/f_auto,q_auto,b_rgb:fafafa/global/rs-x.jpg" alt="Puma RS-X"></div>
+      <div class="grid">
+        <article class="product" data-name="Puma RS-X" data-price="799.90" data-desc="Design Futurista" data-img="https://images.puma.com/image/upload/f_auto,q_auto,b_rgb:fafafa/global/rs-x.jpg" data-link="https://br.puma.com/rs-x">
+          <figure class="thumb"><img src="https://images.puma.com/image/upload/f_auto,q_auto,b_rgb:fafafa/global/rs-x.jpg" alt="Puma RS-X"></figure>
           <h3>Puma RS-X</h3>
-          <p class="muted">Design Futurista</p>
           <div class="price">R$ 799,90</div>
-          <div class="actions">
-            <button class="btn inspect">INSPECIONAR</button>
-            <button class="btn secondary" onclick="window.open('https://br.puma.com/rs-x','_blank')">IR PARA O SITE</button>
+          <div class="product-actions">
+            <button class="btn inspect">Ver / Inspecionar</button>
+            <a class="btn outline" href="https://br.puma.com/rs-x" target="_blank" rel="noopener">Ver na Loja</a>
           </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- CROCS -->
-    <section class="brand-section">
-      <h2 class="brand-title">CROCS</h2>
-      <div class="product-grid">
-        <div class="card" data-name="Crocs Classic Clog" data-desc="Conforto icônico" data-price="299.90" data-img="https://www.crocs.com/on/demandware.static/-/Sites-crocs-master-catalog/default/dw0c3f3f2b/images/large/10001-001.jpg" data-link="https://www.crocs.com.br/classic-clog">
-          <div class="img-container"><img src="https://www.crocs.com/on/demandware.static/-/Sites-crocs-master-catalog/default/dw0c3f3f2b/images/large/10001-001.jpg" alt="Crocs Classic"></div>
-          <h3>Crocs Classic Clog</h3>
-          <p class="muted">Conforto icônico</p>
-          <div class="price">R$ 299,90</div>
-          <div class="actions">
-            <button class="btn inspect">INSPECIONAR</button>
-            <button class="btn secondary" onclick="window.open('https://www.crocs.com.br/classic-clog','_blank')">IR PARA O SITE</button>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- OUS -->
-    <section class="brand-section">
-      <h2 class="brand-title">OUS</h2>
-      <div class="product-grid">
-        <div class="card" data-name="OUS Imigrante" data-desc="Skate Lifestyle" data-price="499.90" data-img="https://ous.com.br/wp-content/uploads/2021/08/imigrante.jpg" data-link="https://ous.com.br/imigrante">
-          <div class="img-container"><img src="https://ous.com.br/wp-content/uploads/2021/08/imigrante.jpg" alt="OUS Imigrante"></div>
-          <h3>OUS Imigrante</h3>
-          <p class="muted">Skate Lifestyle</p>
-          <div class="price">R$ 499,90</div>
-          <div class="actions">
-            <button class="btn inspect">INSPECIONAR</button>
-            <button class="btn secondary" onclick="window.open('https://ous.com.br/imigrante','_blank')">IR PARA O SITE</button>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- HOCKS -->
-    <section class="brand-section">
-      <h2 class="brand-title">HOCKS</h2>
-      <div class="product-grid">
-        <div class="card" data-name="Hocks Sonora" data-desc="Estilo Urbano" data-price="459.90" data-img="https://hocks.com.br/wp-content/uploads/2020/10/sonora.jpg" data-link="https://hocks.com.br/sonora">
-          <div class="img-container"><img src="https://hocks.com.br/wp-content/uploads/2020/10/sonora.jpg" alt="Hocks Sonora"></div>
-          <h3>Hocks Sonora</h3>
-          <p class="muted">Estilo Urbano</p>
-          <div class="price">R$ 459,90</div>
-          <div class="actions">
-            <button class="btn inspect">INSPECIONAR</button>
-            <button class="btn secondary" onclick="window.open('https://hocks.com.br/sonora','_blank')">IR PARA O SITE</button>
-          </div>
-        </div>
+        </article>
       </div>
     </section>
   </main>
 
-  <footer class="footer">
-    <p>&copy; 2026 NETSHOES - Desenvolvido para Washington GitHub</p>
+  <footer class="site-footer">
+    <div class="container">
+      <small>© 2026 SAMUEL FASHION — Desenvolvido por você</small>
+    </div>
   </footer>
 
   <!-- Modal -->
-  <div id="modalBackdrop" class="modal-backdrop" aria-hidden="true">
-    <div class="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
-      <div class="modal-img">
-        <img id="modalImage" src="" alt="">
+  <div id="modal" class="modal" aria-hidden="true">
+    <div class="modal-card">
+      <div class="modal-left">
+        <img id="modalImg" src="" alt="">
       </div>
-      <div class="modal-info">
-        <div>
-          <h2 id="modalTitle">Nome do Produto</h2>
-          <p id="modalDesc">Descrição do produto</p>
-          <div class="price" id="modalPrice">R$ 0,00</div>
-        </div>
+      <div class="modal-right">
+        <h3 id="modalName">Produto</h3>
+        <p id="modalDesc" class="muted">Descrição</p>
+        <div id="modalPrice" class="price">R$ 0,00</div>
         <div class="modal-actions">
-          <button class="close-btn" id="closeModal">Fechar</button>
-          <button class="inspect-btn" id="openInspect">ABRIR NO SITE (INSPECIONAR)</button>
-          <button class="btn" id="goToSite">IR PARA O SITE</button>
+          <button id="openSite" class="btn">Ver na Loja Oficial</button>
+          <button id="closeModal" class="btn outline">Fechar</button>
         </div>
       </div>
     </div>
