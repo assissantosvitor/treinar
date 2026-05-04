@@ -1,59 +1,32 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="pt-br">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>NETSHOES Member - Cadastro</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Netshoes - Home</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="fashion-style.css">
 </head>
 <body>
-    <div class="bg-details">
-        <div class="circle one"></div>
-        <div class="circle two"></div>
-        <div class="shape three"></div>
-    </div>
-
+  <header class="site-header">
     <div class="container">
-        <form id="form-cadastro">
-            <div class="logo">NETSHOES</div>
-            <h2>TORNE-SE UM MEMBRO</h2>
-            <p>Crie seu perfil e tenha acesso antecipado ao que há de melhor no esporte.</p>
-
-            <div class="input-group">
-                <input type="text" id="nome" placeholder="Nome Completo" required>
-            </div>
-
-            <div class="row">
-                <input type="text" id="cpf" placeholder="CPF" maxlength="14" required>
-                <input type="date" id="nascimento" required>
-            </div>
-
-            <div class="input-group">
-                <input type="email" id="email" placeholder="E-mail" required>
-            </div>
-
-            <div class="row">
-                <select id="genero" required>
-                    <option value="" disabled selected>Gênero</option>
-                    <option value="M">Masculino</option>
-                    <option value="F">Feminino</option>
-                    <option value="Trans">Transgênero</option>
-                    <option value="Neutro">Gênero Neutro</option>
-                    <option value="Homossexual">Homossexual</option>
-                    <option value="Therian">Therian</option>
-                    <option value="Outro">Outro</option>
-                </select>
-                <input type="tel" id="telefone" placeholder="Telefone">
-            </div>
-
-            <div class="input-group">
-                <input type="text" id="endereco" placeholder="Endereço">
-            </div>
-
-            <button type="submit">CADASTRAR</button>
-        </form>
+      <h1 class="brand">NETSHOES</h1>
+      <nav class="top-nav">
+        <a href="sucesso.html" class="nav-link">Vitrine</a>
+        <a href="#" class="nav-link">Ofertas</a>
+        <a href="#" class="nav-link">Contato</a>
+      </nav>
     </div>
+  </header>
 
-    <script src="script.js"></script>
+  <main class="container home-hero">
+    <h2>Bem-vindo à vitrine</h2>
+    <p>Veja os lançamentos e clique em qualquer tênis para inspecionar ou ir direto ao site do produto.</p>
+    <a class="cta" href="sucesso.html">Abrir Vitrine</a>
+  </main>
+
+  <footer class="site-footer">
+    <p>© 2026 NETSHOES — Desenvolvido para Washington GitHub</p>
+  </footer>
 </body>
 </html>
