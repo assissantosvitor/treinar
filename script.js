@@ -1,69 +1,48 @@
-// script.js - controla o modal de inspeção e os botões "IR PARA O SITE"
-(function(){
-  const modalBackdrop = document.getElementById('modalBackdrop');
-  const modalImage = document.getElementById('modalImage');
-  const modalTitle = document.getElementById('modalTitle');
-  const modalDesc = document.getElementById('modalDesc');
-  const modalPrice = document.getElementById('modalPrice');
-  const closeModal = document.getElementById('closeModal');
-  const goToSite = document.getElementById('goToSite');
-  const openInspect = document.getElementById('openInspect');
+// Modal + inspeção básica
+document.addEventListener('click', function(e){
+  const inspectBtn = e.target.closest('.inspect');
+  if(inspectBtn){
+    const product = inspectBtn.closest('.product');
+    if(!product) return;
+    const name = product.dataset.name || product.querySelector('h3')?.innerText || 'Produto';
+    const desc = product.dataset.desc || '';
+    const price = product.dataset.price ? Number(product.dataset.price).toFixed(2) : '';
+    const img = product.dataset.img || product.querySelector('img')?.src || '';
+    const link = product.dataset.link || '';
 
-  // Delegation: abre modal quando clicar em botão INSPECIONAR
-  document.addEventListener('click', function(e){
-    const btn = e.target.closest('.inspect');
-    if(!btn) return;
-    const card = btn.closest('.card');
-    if(!card) return;
+    document.getElementById('modalImg').src = img;
+    document.getElementById('modalImg').alt = name;
+    document.getElementById('modalName').textContent = name;
+    document.getElementById('modalDesc').textContent = desc;
+    document.getElementById('modalPrice').textContent = price ? ('R$ ' + price.replace('.',',')) : '';
+    document.getElementById('openSite').dataset.link = link;
 
-    const name = card.dataset.name || card.querySelector('h3')?.innerText || 'Produto';
-    const desc = card.dataset.desc || card.querySelector('p')?.innerText || '';
-    const price = card.dataset.price ? Number(card.dataset.price).toFixed(2) : null;
-    const img = card.dataset.img || card.querySelector('img')?.src || '';
-    const link = card.dataset.link || null;
-
-    modalImage.src = img;
-    modalImage.alt = name;
-    modalTitle.textContent = name;
-    modalDesc.textContent = desc;
-    modalPrice.textContent = price ? ('R$ ' + price.replace('.',',')) : '';
-    goToSite.dataset.link = link;
-    openInspect.dataset.link = link;
-
-    // mostrar modal
-    modalBackdrop.style.display = 'flex';
-    modalBackdrop.setAttribute('aria-hidden','false');
+    document.getElementById('modal').style.display = 'flex';
     document.body.style.overflow = 'hidden';
-  });
-
-  // fechar modal
-  closeModal.addEventListener('click', close);
-  modalBackdrop.addEventListener('click', function(e){
-    if(e.target === modalBackdrop) close();
-  });
-  document.addEventListener('keydown', function(e){
-    if(e.key === 'Escape') close();
-  });
-
-  function close(){
-    modalBackdrop.style.display = 'none';
-    modalBackdrop.setAttribute('aria-hidden','true');
-    document.body.style.overflow = '';
   }
 
-  // botão IR PARA O SITE
-  goToSite.addEventListener('click', function(){
-    const link = this.dataset.link;
-    if(link) window.open(link,'_blank');
-  });
+  if(e.target && e.target.id === 'closeModal'){
+    closeModal();
+  }
 
-  // botão INSPECIONAR: abre a página do produto em nova aba para o usuário inspecionar manualmente
-  openInspect.addEventListener('click', function(){
-    const link = this.dataset.link;
-    if(link){
-      window.open(link,'_blank');
-    } else {
-      alert('Link do produto não disponível para inspeção.');
-    }
-  });
-})();
+  if(e.target && e.target.id === 'openSite'){
+    const link = e.target.dataset.link;
+    if(link) window.open(link, '_blank');
+  }
+});
+
+function closeModal(){
+  document.getElementById('modal').style.display = 'none';
+  document.body.style.overflow = '';
+}
+
+// fechar ao clicar fora
+document.getElementById('modal').addEventListener('click', function(e){
+  if(e.target === this) closeModal();
+});
+
+// fechar com ESC
+document.addEventListener('keydown', function(e){
+  if(e.key === 'Escape') closeModal();
+});
+
