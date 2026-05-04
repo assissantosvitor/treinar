@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VW Netshooes | Lançamentos</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="toast" id="toast">Item adicionado ao carrinho! 🚀</div>
+
+    <header>
+        <div class="logo">VW NETSHOOES</div>
+        <div class="header-controls">
+            <button class="btn-icon" id="theme-toggle" title="Alternar Tema">🌓</button>
+            <button class="btn-icon" id="cart-toggle" title="Abrir Carrinho">
+                🛒 <span class="cart-badge" id="cart-count">0</span>
+            </button>
+        </div>
+    </header>
+
+    <div class="filters" id="filters">
+        <button class="filter-btn active" data-filter="all">Todos</button>
+        <button class="filter-btn" data-filter="Nike">Nike</button>
+        <button class="filter-btn" data-filter="Adidas">Adidas</button>
+        <button class="filter-btn" data-filter="Puma">Puma</button>
+    </div>
+
+    <section class="hero">
+        <h1>Nova Coleção Esportiva</h1>
+        <p>Acelere seus passos com a melhor performance.</p>
+    </section>
+
+    <main class="vitrine" id="vitrine">
+        </main>
+
+    <div class="cart-sidebar" id="cart-sidebar">
+        <div class="cart-header">
+            <h2>Meu Carrinho</h2>
+            <button class="close-cart" id="close-cart">✕</button>
+        </div>
+        <div class="cart-items" id="cart-items">
+            <p>O carrinho está vazio.</p>
+        </div>
+        <div class="cart-footer">
+            <div class="totals">
+                <span>Total:</span>
+                <span id="cart-total">R$ 0,00</span>
+            </div>
+            <button class="btn-checkout">Finalizar Compra</button>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2026 VW Netshooes. Todos os direitos reservados.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
